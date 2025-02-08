@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #4B0082; /* Color morado */
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4B0082; /* Borde morado */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            background-color: #800080; /* Color morado */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #9932CC; /* Color morado más claro */
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4B0082; /* Color morado */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Registro</h1>
+        <form>
+            <div class="form-group">
+                <label for="nombre-completo">Nombre Completo</label>
+                <input type="text" id="nombre-completo" name="nombre-completo" required>
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" required>
+            </div>
+            <div class="form-group">
+                <label for="documento-identidad">Documento de Identidad</label>
+                <input type="text" id="documento-identidad" name="documento-identidad" required>
+            </div>
+            <div class="form-group">
+                <label for="correo-electronico">Correo Electrónico</label>
+                <input type="email" id="correo-electronico" name="correo-electronico" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

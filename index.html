@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .header {
+            background-color: #242424;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .back-arrow {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .warning-banner {
+            background-color: #4e3a00;
+            color: #ffd866;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 4px;
+        }
+
+        .company-section {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #ff3366;
+            padding: 10px;
+            border-radius: 12px;
+        }
+
+        .company-info {
+            flex-grow: 1;
+        }
+
+        .invoice-number {
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: right;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            flex: 1;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            background-color: #242424;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .add-item-section {
+            border: 2px dashed #444;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .totals-section {
+            text-align: right;
+            margin: 20px 0;
+        }
+
+        .total-row {
+            margin: 10px 0;
+        }
+
+        .expandable-section {
+            border: 1px solid #444;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: right;
+            border-top: 1px solid #444;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #0077cc;
+            color: white;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: flex-end;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="back-arrow">← Emitir</a>
+        <span>Factura</span>
+    </header>
+
+    <div class="warning-banner">
+        DOCUMENTO SIN VALOR: Esta empresa está en modo DESARROLLO (modo de pruebas)
+    </div>
+
+    <div class="company-section">
+        <div class="company-logo">
+            <img src="/api/placeholder/80/80" alt="Test logo">
+        </div>
+        <div class="company-info">
+            <h2>EMPRESA DE PRUEBAS</h2>
+            <p>NOMBRE LEGAL DE LA EMPRESA SAC</p>
+            <p>Dirección fiscal de la empresa - Distrito - Provincia</p>
+            <small>Por ejemplo WhatsApp 987 654 321</small>
+        </div>
+        <div class="invoice-number">
+            <div>R.U.C. N° 20000000000</div>
+            <div>FACTURA ELECTRÓNICA</div>
+            <div>F001 - 00001502</div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-row">
+            <div class="input-group">
+                <input type="text" placeholder="Cliente">
+            </div>
+            <div class="input-group">
+                <select>
+                    <option>RUC</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Número de Documento">
+            </div>
+        </div>
+
+        <input type="text" placeholder="Dirección (opcional)" class="full-width">
+
+        <div class="form-row">
+            <div class="input-group">
+                <input type="date" value="2024-11-09">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Vencimiento (opcional)">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="input-group">
+                <select>
+                    <option>Venta interna (productos/servicios)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select>
+                    <option>PEN - (S/) Sol</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="text" placeholder="Orden de Compra (opcional)" class="full-width">
+
+        <div class="add-item-section">
+            + Agregar un ítem
+        </div>
+
+        <div class="totals-section">
+            <div class="total-row">IGV: 0.00</div>
+            <div class="total-row">Importe Total: 0.00</div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="igv-retencion">
+                <label for="igv-retencion">Aplica Retención del IGV</label>
+            </div>
+            <div class="form-row">
+                <select>
+                    <option>Contado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="expandable-section">
+            IMPORTE EN LETRAS: CERO CON 00/100 SOLES
+        </div>
+
+        <div class="expandable-section">
+            + Agregar Observaciones o Notas
+        </div>
+
+        <div class="expandable-section">
+            + Agregar Documentos Relacionados
+        </div>
+
+        <div class="expandable-section">
+            + Agregar Guías Relacionadas
+        </div>
+    </div>
+
+    <div class="footer">
+        <small>Este es un mensaje de pie de página. La mayoría pone "Gracias por su compra", pero puedes poner cualquier mensaje.</small>
+        <button class="btn btn-primary">Emitir Factura</button>
+    </div>
+</body>
+</html>
